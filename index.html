@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corner to Cartel</title>
+    <script type="module" crossorigin src="./assets/index-CW29I0on.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CdKH3bE9.css">
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <div id="hud">
+      <div class="panel top-left">
+        <div class="cash" id="hud-cash">$200</div>
+        <div class="sub"><span id="hud-rank">Street Thug</span> · Lvl <span id="hud-level">1</span> · <span id="hud-xp">0 / 100 XP</span></div>
+        <div class="sub" id="hud-carry">Carrying 0 / 20</div>
+        <div class="sub points hidden" id="hud-points"></div>
+      </div>
+      <div class="goal" id="hud-goal"></div>
+      <div class="touch" id="touch">
+        <button data-key="KeyE">Talk</button>
+        <button data-key="KeyP" class="ghost">Phone</button>
+        <button data-key="KeyK" class="ghost">Skills</button>
+      </div>
+      <button class="mute ghost" id="hud-mute" aria-label="Sound on or off">Sound on</button>
+      <div class="toast hidden" id="hud-toast"></div>
+      <div class="panel top-right">
+        <div class="district" id="hud-district">Miami · Eastside</div>
+        <div class="sub" id="hud-clock">17:30</div>
+        <div class="sub points hidden" id="hud-job"></div>
+        <div class="heat" title="Heat"><span>Heat</span><div class="heat-bar"><div id="hud-heat"></div></div></div>
+      </div>
+      <div class="prompt hidden" id="hud-prompt"></div>
+      <div class="controls">
+        <b>WASD</b> move · <b>Shift</b> sprint · <b>Mouse</b> / <b>Arrows</b> look · <b>Wheel</b> zoom · <b>E</b> talk / confirm · <b>A</b> <b>D</b> amount · <b>K</b> skills · <b>P</b> phone · <b>M</b> sound · <b>Esc</b> leave
+      </div>
+      <div class="dialogue hidden" id="dialogue">
+        <div class="dialogue-head">
+          <span class="dialogue-name" id="dialogue-name"></span>
+          <span class="dialogue-role" id="dialogue-role"></span>
+        </div>
+        <div class="dialogue-text" id="dialogue-text"></div>
+        <div class="deal hidden" id="deal">
+          <div class="deal-qty hidden" id="deal-qty-row">
+            <button id="deal-less" class="ghost" aria-label="One less">−</button>
+            <span id="deal-qty">1</span>
+            <button id="deal-more" class="ghost" aria-label="One more">+</button>
+            <button id="deal-max" class="ghost">Max</button>
+          </div>
+          <div class="deal-summary" id="deal-summary"></div>
+          <div class="deal-detail" id="deal-detail"></div>
+        </div>
+        <div class="choices hidden" id="choices"></div>
+        <div class="dialogue-actions" id="dialogue-actions">
+          <button id="dialogue-next">Continue</button>
+          <button id="dialogue-leave" class="ghost">Leave</button>
+        </div>
+      </div>
+      <div class="skills hidden" id="skills">
+        <div class="skills-card">
+          <div class="dialogue-head">
+            <span class="dialogue-name">Skills</span>
+            <span class="dialogue-role" id="skills-points"></span>
+          </div>
+          <div id="skills-list"></div>
+          <div class="dialogue-actions"><button id="skills-close" class="ghost">Close</button></div>
+        </div>
+      </div>
+      <div class="start" id="start">
+        <div class="start-card">
+          <h1>Corner to Cartel</h1>
+          <p>Miami. You have $200, no crew and no name. Buy low, sell on the street, stay ahead of the police, and work your way up from one corner to every city on the map.</p>
+          <button id="start-btn">Hit the street</button>
+          <button id="start-new" class="ghost hidden">New game</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
