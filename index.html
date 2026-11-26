@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Corner to Cartel</title>
-    <script type="module" crossorigin src="./assets/index-2lfQjl6M.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DlgGJSrA.css">
+    <script type="module" crossorigin src="./assets/index-C0kEFJtk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DlNXkw3o.css">
   </head>
   <body>
     <canvas id="game"></canvas>
@@ -21,6 +21,7 @@
         <button data-key="KeyE">Talk</button>
         <button data-key="KeyP" class="ghost">Phone</button>
         <button data-key="KeyK" class="ghost">Skills</button>
+        <button data-key="KeyM" class="ghost">Map</button>
       </div>
       <button class="mute ghost" id="hud-mute" aria-label="Sound on or off">Sound on</button>
       <div class="toast hidden" id="hud-toast"></div>
@@ -30,9 +31,10 @@
         <div class="sub points hidden" id="hud-job"></div>
         <div class="heat" title="Heat"><span>Heat</span><div class="heat-bar"><div id="hud-heat"></div></div></div>
       </div>
+      <canvas class="minimap" id="minimap" title="Map (M)"></canvas>
       <div class="prompt hidden" id="hud-prompt"></div>
       <div class="controls">
-        <b>WASD</b> move · <b>Shift</b> sprint · <b>Mouse</b> / <b>Arrows</b> look · <b>Wheel</b> zoom · <b>E</b> talk / confirm · <b>A</b> <b>D</b> amount · <b>K</b> skills · <b>P</b> phone · <b>M</b> sound · <b>Esc</b> leave
+        <b>WASD</b> move · <b>Shift</b> sprint · <b>Mouse</b> / <b>Arrows</b> look · <b>Wheel</b> zoom · <b>E</b> talk / confirm · <b>A</b> <b>D</b> amount · <b>K</b> skills · <b>P</b> phone · <b>M</b> map · <b>N</b> sound · <b>Esc</b> leave
       </div>
       <div class="dialogue hidden" id="dialogue">
         <div class="dialogue-head">
@@ -64,6 +66,24 @@
           </div>
           <div id="skills-list"></div>
           <div class="dialogue-actions"><button id="skills-close" class="ghost">Close</button></div>
+        </div>
+      </div>
+      <div class="map hidden" id="map">
+        <div class="map-card">
+          <div class="dialogue-head">
+            <span class="dialogue-name" id="map-title">Map</span>
+            <span class="dialogue-role">North is up</span>
+          </div>
+          <div class="map-body">
+            <canvas id="map-canvas"></canvas>
+            <div class="map-side">
+              <div class="map-heading">Legend</div>
+              <div id="map-legend"></div>
+              <div class="map-heading" id="map-places-title"></div>
+              <div id="map-places"></div>
+            </div>
+          </div>
+          <div class="dialogue-actions"><button id="map-close" class="ghost">Close</button></div>
         </div>
       </div>
       <div class="start" id="start">
